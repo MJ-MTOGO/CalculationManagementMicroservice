@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "beo5xA62GapI99ARSIrqHGqpFCI+YsqPJEddRuQeYK4=",
+  "Source": "CalculationManagementService",
+  "BasePath": "_content/CalculationManagementService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
