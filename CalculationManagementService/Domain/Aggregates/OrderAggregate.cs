@@ -6,9 +6,9 @@ namespace CalculationManagementService.Domain.Aggregates
     public class OrderAggregate
     {
         public Order Order { get; private set; }
-        public MTOGOEarning? MTOGOEarning { get; private set; }
-        public RestaurantEarning? RestaurantEarning { get; private set; }
-        public AgentBonus? AgentBonus { get; private set; }
+        public MTOGOEarning MTOGOEarning { get; private set; }
+        public RestaurantEarning RestaurantEarning { get; private set; }
+        public AgentBonus AgentBonus { get; private set; }
 
         public OrderAggregate(Order order)
         {
@@ -24,8 +24,10 @@ namespace CalculationManagementService.Domain.Aggregates
                 MTOGOEarning = new MTOGOEarning(Order.Id, mtogoEarningAmount);
 
                 // Calculate Restaurant Earning
+                Decimal t = (decimal)106.25;
                 var restaurantEarningAmount = new Money(Order.TotalPrice - mtogoEarningAmount.Amount, "DKK");
-                RestaurantEarning = new RestaurantEarning(Order.Id, restaurantEarningAmount);
+ 
+                RestaurantEarning = new RestaurantEarning(Order.Id,restaurantEarningAmount );
             }
         }
 
@@ -36,7 +38,7 @@ namespace CalculationManagementService.Domain.Aggregates
                 // Check if the delivery time is between 18:00 and 06:00
                 if (Order.DeliveringDateTime.Hour >= 18 || Order.DeliveringDateTime.Hour < 6)
                 {
-                    var bonusAmount = bonusPercentage.ApplyTo(MTOGOEarning.Amount);
+                    var bonusAmount = bonusPercentage.ApplyTo(MTOGOEarning.Price);
                     AgentBonus = new AgentBonus(Guid.NewGuid(), bonusAmount, Order.DeliveringDateTime, Order.Id);
                 }
             }

@@ -453,11 +453,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementService\\CalculationManagementService.csproj",
+      "projectUniqueName": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\CalculationManagementService.csproj",
       "projectName": "CalculationManagementService",
-      "projectPath": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementService\\CalculationManagementService.csproj",
+      "projectPath": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\CalculationManagementService.csproj",
       "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementService\\obj\\",
+      "outputPath": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
