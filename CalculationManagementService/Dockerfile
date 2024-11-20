@@ -13,3 +13,13 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:6c4df091e4e531bb93bdbfe7e7f0998e
 WORKDIR /App
 COPY --from=build-env /App/out .
 ENTRYPOINT ["dotnet", "CalculationManagementService.dll"]
+
+
+
+
+
+
+
+
+
+
