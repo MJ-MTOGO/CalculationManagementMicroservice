@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C25B85C5-847A-471D-B647-A884B0C9AF53}|CalculationManagementService.csproj|c:\\users\\moham\\source\\repos\\exam\\calculationmanagementmicroservice\\calculationmanagementservice\\domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C25B85C5-847A-471D-B647-A884B0C9AF53}|CalculationManagementService.csproj|solutionrelative:domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C25B85C5-847A-471D-B647-A884B0C9AF53}|CalculationManagementService.csproj|c:\\users\\moham\\source\\repos\\exam\\calculationmanagementmicroservice\\calculationmanagementservice\\application\\services\\calculationservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C25B85C5-847A-471D-B647-A884B0C9AF53}|CalculationManagementService.csproj|solutionrelative:application\\services\\calculationservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C25B85C5-847A-471D-B647-A884B0C9AF53}|CalculationManagementService.csproj|c:\\users\\moham\\source\\repos\\exam\\calculationmanagementmicroservice\\calculationmanagementservice\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C25B85C5-847A-471D-B647-A884B0C9AF53}|CalculationManagementService.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,10 +31,6 @@
       "RelativeMoniker": "D:0:0:{C25B85C5-847A-471D-B647-A884B0C9AF53}|CalculationManagementService.csproj|solutionrelative:calculationmanagementservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C25B85C5-847A-471D-B647-A884B0C9AF53}|CalculationManagementService.csproj|c:\\users\\moham\\source\\repos\\exam\\calculationmanagementmicroservice\\calculationmanagementservice\\application\\services\\calculationservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C25B85C5-847A-471D-B647-A884B0C9AF53}|CalculationManagementService.csproj|solutionrelative:application\\services\\calculationservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{54FA5C51-D881-4B8C-9E1C-8161BB3DCB37}|..\\CalculationManagementServiceTests\\CalculationManagementServiceTests.csproj|c:\\users\\moham\\source\\repos\\exam\\calculationmanagementmicroservice\\calculationmanagementservicetests\\unittest\\calculationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -40,10 +44,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C25B85C5-847A-471D-B647-A884B0C9AF53}|CalculationManagementService.csproj|c:\\users\\moham\\source\\repos\\exam\\calculationmanagementmicroservice\\calculationmanagementservice\\domain\\valueobjects\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C25B85C5-847A-471D-B647-A884B0C9AF53}|CalculationManagementService.csproj|solutionrelative:domain\\valueobjects\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C25B85C5-847A-471D-B647-A884B0C9AF53}|CalculationManagementService.csproj|c:\\users\\moham\\source\\repos\\exam\\calculationmanagementmicroservice\\calculationmanagementservice\\domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C25B85C5-847A-471D-B647-A884B0C9AF53}|CalculationManagementService.csproj|solutionrelative:domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -53,7 +53,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -65,7 +65,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
@@ -78,33 +78,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WeatherForecast.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\WeatherForecast.cs",
-              "RelativeDocumentMoniker": "WeatherForecast.cs",
-              "ToolTip": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\WeatherForecast.cs",
-              "RelativeToolTip": "WeatherForecast.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T15:22:36.652Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CalculationManagementService",
-              "DocumentMoniker": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\CalculationManagementService.csproj",
-              "RelativeDocumentMoniker": "CalculationManagementService.csproj",
-              "ToolTip": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\CalculationManagementService.csproj",
-              "RelativeToolTip": "CalculationManagementService.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-20T15:14:25.776Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -112,12 +86,11 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T15:04:00.948Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T15:04:00.948Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\Dockerfile",
               "RelativeDocumentMoniker": "Dockerfile",
@@ -125,12 +98,11 @@
               "RelativeToolTip": "Dockerfile",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-20T14:16:55.877Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T14:16:55.877Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "CalculationService .cs",
               "DocumentMoniker": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\Application\\Services\\CalculationService .cs",
               "RelativeDocumentMoniker": "Application\\Services\\CalculationService .cs",
@@ -143,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Percentage.cs",
               "DocumentMoniker": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\Domain\\ValueObjects\\Percentage.cs",
               "RelativeDocumentMoniker": "Domain\\ValueObjects\\Percentage.cs",
@@ -155,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Money.cs",
               "DocumentMoniker": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\Domain\\ValueObjects\\Money.cs",
               "RelativeDocumentMoniker": "Domain\\ValueObjects\\Money.cs",
@@ -167,19 +139,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\Domain\\Entities\\Order.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Order.cs",
-              "ToolTip": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\Domain\\Entities\\Order.cs",
-              "RelativeToolTip": "Domain\\Entities\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\Domain\\Entities\\Order.cs*",
+              "RelativeToolTip": "Domain\\Entities\\Order.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T09:42:10.948Z"
+              "WhenOpened": "2024-11-19T09:42:10.948Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "CalculationManagementService.csproj",
+              "DocumentMoniker": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\CalculationManagementService.csproj",
+              "RelativeDocumentMoniker": "CalculationManagementService.csproj",
+              "ToolTip": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\CalculationManagementService.csproj",
+              "RelativeToolTip": "CalculationManagementService.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-20T15:14:25.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\WeatherForecast.cs",
+              "RelativeToolTip": "WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T15:22:36.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "CalculationTest.cs",
               "DocumentMoniker": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementServiceTests\\UnitTest\\CalculationTest.cs",
               "RelativeDocumentMoniker": "..\\CalculationManagementServiceTests\\UnitTest\\CalculationTest.cs",
@@ -191,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "OrderAggregate.cs",
               "DocumentMoniker": "C:\\Users\\moham\\source\\repos\\Exam\\CalculationManagementMicroservice\\CalculationManagementService\\Domain\\Aggregates\\OrderAggregate.cs",
               "RelativeDocumentMoniker": "Domain\\Aggregates\\OrderAggregate.cs",

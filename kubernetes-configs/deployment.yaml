@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculation-management-service
+  labels:
+    app: calculation-management-service
+spec:
+  replicas: 2 # Number of pods
+  selector:
+    matchLabels:
+      app: calculation-management-service
+  template:
+    metadata:
+      labels:
+        app: calculation-management-service
+    spec:
+      containers:
+        - name: calculation-management-service
+          image: gcr.io/mtogo-439509/calculation-management-service:latest # GCR image
+          ports:
+            - containerPort: 8080 # The internal container port
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Production # Example environment variable
