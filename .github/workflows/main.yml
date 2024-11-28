@@ -58,7 +58,7 @@ jobs:
 
       # Step 8: Build and Push Docker Image
       - name: Build and Push Docker Image
-        working-directory: ./CalculationrManagementService
+        working-directory: ./CalculationManagementService
         run: |
           docker build -t gcr.io/mtogov1/calculation-management-service:latest -f Dockerfile .
           docker push gcr.io/mtogov1/calculation-management-service:latest
