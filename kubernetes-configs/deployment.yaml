@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: calculation-management-service
-          image: gcr.io/mtogo-439509/calculation-management-service:latest # GCR image
+          image: gcr.io/mtogov1/calculation-management-service:latest # GCR image
           ports:
             - containerPort: 8080 # The internal container port
           env:
