@@ -1,48 +1,74 @@
-﻿using CalculationManagementService.Application.Interfaces;
-using CalculationManagementService.Domain.Aggregates;
-using CalculationManagementService.Domain.Entities;
-using CalculationManagementService.Domain.ValueObjects;
+﻿using CalculationManagementService.Application.DTOs;
+using CalculationManagementService.Application.Ports;
+using Newtonsoft.Json;
 
 namespace CalculationManagementService.Application.Services
 {
     public class CalculationService
     {
-        private readonly IMessagePublisher _publisher;
-        private readonly Percentage _mtogoPercentage;
-        private readonly Percentage _bonusPercentage;
+        private readonly HttpClient _httpClient;
+        private readonly IMessageBus _messageBus;
 
-        public CalculationService(IMessagePublisher publisher)
+        public CalculationService(HttpClient httpClient, IMessageBus messageBus)
         {
-            _publisher = publisher;
-            _mtogoPercentage = new Percentage(15);  // Set default MTOGO fee percentage
-            _bonusPercentage = new Percentage(5);   // Set default agent bonus percentage
+            _httpClient = httpClient;
+            _messageBus = messageBus;
         }
 
-        public async Task ProcessOrderAsync(Order order)
+        public async Task ProcessOrderDeliveredMessageAsync(string messageData)
         {
-            // Initialize the OrderAggregate with the received order
-            var orderAggregate = new OrderAggregate(order);
+            // Deserialize the DeliveredDto
+            var deliveredDto = JsonConvert.DeserializeObject<DeliveredDto>(messageData);
+            if (deliveredDto == null)
+                throw new Exception("Failed to deserialize DeliveredDto.");
 
-            // Perform calculations
-            orderAggregate.CalculateEarnings(_mtogoPercentage);
-            orderAggregate.CalculateAgentBonus(_bonusPercentage);
+            // Fetch the OrderDto from the API
+            var orderResponse = await _httpClient.GetAsync($"http://localhost:5194/api/orders/{deliveredDto.OrderId}");
+            orderResponse.EnsureSuccessStatusCode();
+            var orderData = await orderResponse.Content.ReadAsStringAsync();
+            var orderDto = JsonConvert.DeserializeObject<OrderDto>(orderData);
+            if (orderDto == null)
+                throw new Exception("Failed to deserialize OrderDto.");
 
-            // Publish each result for other services to consume
-            await _publisher.PublishAsync(orderAggregate.MTOGOEarning, "mtogo-earnings");
-            await _publisher.PublishAsync(orderAggregate.RestaurantEarning, "restaurant-earnings");
+            // Perform earnings calculations
+            var earnings = CalculateEarnings(orderDto, deliveredDto);
 
-            // Publish agent bonus if calculated (e.g., if delivery time is within bonus hours)
-            if (orderAggregate.AgentBonus != null)
+            // Publish the earnings to the "calculated-earnings" topic
+            await _messageBus.PublishAsync("calculated-earnings", earnings);
+        }
+
+        private EarningDto CalculateEarnings(OrderDto order, DeliveredDto delivered)
+        {
+            // Calculate Mtogo earning
+            decimal mtogoEarning = CalculateMtogoEarning(order.TotalPrice);
+
+            // Calculate restaurant earning
+            decimal restaurantEarning = order.TotalPrice - mtogoEarning;
+
+            // Calculate agent bonus (5% of Mtogo earning before VAT if between 18:00 and 06:00)
+            decimal agentBonus = 0;
+            if (delivered.DeliveringDatetime.TimeOfDay >= TimeSpan.FromHours(18) || delivered.DeliveringDatetime.TimeOfDay <= TimeSpan.FromHours(6))
             {
-                await _publisher.PublishAsync(orderAggregate.AgentBonus, "agent-bonuses");
+                agentBonus = mtogoEarning * 0.05m;
+                mtogoEarning = mtogoEarning - agentBonus;
+
             }
 
-            Console.WriteLine("Results published for Order ID: " + order.Id);
+            return new EarningDto
+            {
+                OrderId = order.OrderId,
+                MtogoEarning = mtogoEarning,
+                RestaurantEarning = restaurantEarning,
+                AgentEarning = agentBonus
+            };
+        }
+
+        private decimal CalculateMtogoEarning(decimal totalPrice)
+        {
+            if (totalPrice <= 100) return totalPrice * 0.16m;
+            if (totalPrice <= 500) return 100 * 0.16m + (totalPrice - 100) * 0.15m;
+            if (totalPrice <= 1000) return 100 * 0.16m + 400 * 0.15m + (totalPrice - 500) * 0.14m;
+            return 100 * 0.16m + 400 * 0.15m + 500 * 0.14m + (totalPrice - 1000) * 0.13m;
         }
     }
 }
-
-//Explanation of CalculationService:
-//ProcessOrderAsync accepts the Order object and initializes an OrderAggregate.
-//The OrderAggregate calculates the MTOGO earnings, restaurant earnings, and agent bonus.
-//Each result is published using _publisher to its respective topic (mtogo-earnings, restaurant-earnings, and agent-bonuses).
