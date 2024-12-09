@@ -1,26 +1,29 @@
-﻿using CalculationManagementService.Application.Services;
-using CalculationManagementService.Application.Ports;
+﻿using CalculationManagementService.Application.Ports;
+using CalculationManagementService.Application.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CalculationManagementService.Infrastructure.Subscribers
 {
     public class SubscribeService
     {
         private readonly IMessageBus _messageBus;
-        private readonly CalculationService _calculationService;
+        private readonly IServiceProvider _serviceProvider;
 
-        public SubscribeService(IMessageBus messageBus, CalculationService calculationService)
+        public SubscribeService(IMessageBus messageBus, IServiceProvider serviceProvider)
         {
             _messageBus = messageBus;
-            _calculationService = calculationService;
+            _serviceProvider = serviceProvider;
         }
 
         public async Task StartAsync()
         {
-            await _messageBus.SubscribeAsync("order-delivered-sub", async messageData =>
+            await _messageBus.SubscribeAsync("order-delivered-sub2", async messageData =>
             {
+                using var scope = _serviceProvider.CreateScope();
+                var calculationService = scope.ServiceProvider.GetRequiredService<CalculationService>();
                 try
                 {
-                    await _calculationService.ProcessOrderDeliveredMessageAsync(messageData);
+                    await calculationService.ProcessOrderDeliveredMessageAsync(messageData);
                 }
                 catch (Exception ex)
                 {
